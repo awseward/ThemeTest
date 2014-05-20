@@ -24,9 +24,19 @@ namespace ThemeTest
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Cycle_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.CycleTheme();
+        }
+
+        private void Party_Checked(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Party();
+        }
+
+        private void Party_Unchecked(object sender, RoutedEventArgs e)
+        {
+            _viewModel.StopPartying();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace ThemeTest.Source
 {
@@ -76,6 +77,37 @@ namespace ThemeTest.Source
         public void ToggleTheme()
         {
             CurrentTheme = (CurrentTheme == Theme.Light) ? Theme.Dark : Theme.Light;
+        }
+
+        private BackgroundWorker _partyWorker;
+
+        public void Party()
+        {
+            _partyWorker = new BackgroundWorker();
+            _partyWorker.WorkerSupportsCancellation = true;
+            _partyWorker.DoWork += partyWorker_DoWork;
+
+            _partyWorker.RunWorkerAsync();
+        }
+
+        private void partyWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker partyWorker = (BackgroundWorker) sender;
+            
+            while (!partyWorker.CancellationPending)
+            {
+                CycleTheme();
+                Thread.Sleep(20);
+            }
+
+            e.Cancel = true;
+        }
+
+        public void StopPartying()
+        {
+            BackgroundWorker partyWorker = _partyWorker;
+            _partyWorker = null;
+            partyWorker.CancelAsync();
         }
     }
 }
