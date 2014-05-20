@@ -32,8 +32,8 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0">
-                <Viewbox Grid.Column="0" Child="{StaticResource modernui_thumbs_down}" Margin="40" />
+            <Button Grid.Column="0" Click="Wayne_Click">
+                <Viewbox Grid.Column="0" Child="{StaticResource modernui_man_walk}" Margin="40" />
             </Button>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <TextBlock Text="This is a test of the" FontSize="60" />
@@ -41,8 +41,12 @@
                            FontSize="80"/>
                 <TextBlock Text="theme" FontSize="60" />
             </StackPanel>
-            <Button Grid.Column="2">
-                <Viewbox Grid.Column="2" Child="{StaticResource modernui_thumbs_up}" Margin="40" />
+            <Button Grid.Column="2" Click="Garth_Click">
+                <Viewbox Grid.Column="2" Child="{StaticResource modernui_man_walk}" Margin="40" RenderTransformOrigin="0.5 0.5">
+                    <Viewbox.RenderTransform>
+                        <ScaleTransform ScaleX="-1" />
+                    </Viewbox.RenderTransform>
+                </Viewbox>
             </Button>
         </Grid>
         <StackPanel Grid.Row="1">

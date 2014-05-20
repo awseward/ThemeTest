@@ -74,11 +74,6 @@ namespace ThemeTest.Source
             CurrentTheme = (Theme) nextIndex;
         }
 
-        public void ToggleTheme()
-        {
-            CurrentTheme = (CurrentTheme == Theme.Light) ? Theme.Dark : Theme.Light;
-        }
-
         private BackgroundWorker _partyWorker;
 
         public void Party()

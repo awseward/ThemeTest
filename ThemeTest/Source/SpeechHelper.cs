@@ -8,16 +8,21 @@ namespace ThemeTest.Source
 {
     public static class SpeechHelper
     {
-        private static SpeechSynthesizer _speechSynth = new SpeechSynthesizer { Rate = 2 };
+        private static SpeechSynthesizer _speechSynth = new SpeechSynthesizer { Rate = 1 };
 
         public static void Party()
         {
-            _speechSynth.SpeakAsync("Party party party!");
+            Say("Party party party!");
         }
 
         public static void StopPartying()
         {
-            _speechSynth.SpeakAsync("Time to stop partying!");
+            Say("Time to stop partying!");
+        }
+
+        public static void Say(String message)
+        {
+            _speechSynth.SpeakAsync(message);
         }
     }
 }

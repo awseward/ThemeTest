@@ -28,6 +28,7 @@ namespace ThemeTest
         private void Cycle_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.CycleTheme();
+            SpeechHelper.Say(String.Format("This is a test of the {0} theme", _viewModel.CurrentTheme.ToString()));
         }
 
         private void Party_Checked(object sender, RoutedEventArgs e)
@@ -40,6 +41,16 @@ namespace ThemeTest
         {
             _viewModel.StopPartying();
             SpeechHelper.StopPartying();
+        }
+
+        private void Wayne_Click(object sender, RoutedEventArgs e)
+        {
+            SpeechHelper.Say("Party on Garth!");
+        }
+
+        private void Garth_Click(object sender, RoutedEventArgs e)
+        {
+            SpeechHelper.Say("Party on Wayne!");
         }
     }
 }
