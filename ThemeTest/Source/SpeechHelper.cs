@@ -8,7 +8,7 @@ namespace ThemeTest.Source
 {
     public static class SpeechHelper
     {
-        private static SpeechSynthesizer _speechSynth = new SpeechSynthesizer { Rate = 1 };
+        private static SpeechSynthesizer _speechSynth = new SpeechSynthesizer { Rate = 2 };
 
         public static void Party()
         {

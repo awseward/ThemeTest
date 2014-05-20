@@ -28,7 +28,7 @@ namespace ThemeTest
         private void Cycle_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.CycleTheme();
-            SpeechHelper.Say(String.Format("This is a test of the {0} theme", _viewModel.CurrentTheme.ToString()));
+            SpeechHelper.Say(_viewModel.CurrentTheme.ToString());
         }
 
         private void Party_Checked(object sender, RoutedEventArgs e)
